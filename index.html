@@ -1,0 +1,225 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aphelele Khambule – AI Productivity Assistant Portfolio</title>
+<meta name="description" content="Portfolio of Aphelele Khambule: WorkMate, an AI-powered workplace productivity assistant built for the CAPACITI AI Skill Accelerator Programme.">
+<meta property="og:title" content="WorkMate – AI Workplace Productivity Assistant">
+<meta property="og:description" content="Email generator, meeting summarizer, task planner, research assistant and chatbot, built with prompt engineering and responsible-AI safeguards.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230b6e69'/%3E%3Ctext x='16' y='22' font-size='18' text-anchor='middle' fill='white' font-family='Georgia' font-weight='bold'%3EW%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#about">Skip to content</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top"><span class="dot" aria-hidden="true">W</span>Aphelele Khambule</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#solution">Solution</a><a href="#prompts">Prompts</a><a href="#responsible">Responsible AI</a><a href="#impact">Impact</a><a href="#challenges">Challenges</a>
+      <a class="btn small" href="app.html">Launch assistant</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+<section class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">CAPACITI AI Skill Accelerator Programme · Capstone project</p>
+      <h1>WorkMate: an AI assistant that gives your workday back.</h1>
+      <p class="lead">Draft emails, turn messy meeting notes into action items, plan your day and understand complex reports faster, with prompts that are tested and safeguards that keep a human in charge.</p>
+      <div class="actions">
+        <a class="btn" href="app.html">Try the assistant →</a>
+        <a class="btn ghost" id="repoLink" href="https://github.com/YOUR-GITHUB-USERNAME/AI-Productivity-Assistant">View source on GitHub</a>
+        <a class="btn ghost" href="presentation/WorkMate-Presentation.pptx" download>Download slides</a>
+      </div>
+    </div>
+    <div class="mock" aria-hidden="true">
+      <div class="bar"><i></i><i></i><i></i></div>
+      <div class="body">
+        <span class="pill amber">Meeting notes → action items</span>
+        <div class="tablewrap"><table>
+          <thead><tr><th>Task</th><th>Owner</th><th>Due</th></tr></thead>
+          <tbody>
+            <tr><td>Send revised supplier contract</td><td>Sipho</td><td>Friday</td></tr>
+            <tr><td>Update cost tracker</td><td>Lerato</td><td>12 Oct</td></tr>
+            <tr><td>Look at overtime costs</td><td>Unassigned ⚠</td><td>—</td></tr>
+          </tbody></table></div>
+        <p class="muted" style="margin:0;font-size:.82rem">Gaps are flagged, never guessed.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="about" class="band">
+  <div class="wrap grid g2" style="align-items:start">
+    <div>
+      <p class="eyebrow">About</p>
+      <h2>Hi, I’m Aphelele.</h2>
+      <p>I’m a participant in the <strong>CAPACITI AI Skill Accelerator Programme</strong>. This portfolio presents my capstone project, <strong>WorkMate</strong>, an AI-powered workplace productivity assistant, together with the thinking behind it: how I designed the prompts, tested them, and made the tool safe to rely on.</p>
+      <p>The programme focuses on five skills, and this project is built to show each one in practice:</p>
+    </div>
+    <div class="card">
+      <table>
+        <thead><tr><th>Programme skill</th><th>Where you can see it</th></tr></thead>
+        <tbody>
+          <tr><td>Introduction to AI</td><td>Demo engine vs Live LLM, with honest limits</td></tr>
+          <tr><td>Maximise productivity with AI tools</td><td>Five automated workplace workflows</td></tr>
+          <tr><td>The art of prompting</td><td>Prompt Lab: v1 → v3 for every feature</td></tr>
+          <tr><td>Use AI responsibly</td><td>Disclaimers, PII scan, validation checklists</td></tr>
+          <tr><td>Stay ahead of the AI curve</td><td>Multi-provider, bring-your-own-model design</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section id="problem">
+  <div class="wrap grid g2" style="align-items:center">
+    <div>
+      <p class="eyebrow">The problem</p>
+      <h2>Repetitive admin quietly eats the working week.</h2>
+      <p>Professionals repeatedly draft similar emails, rewrite scrappy meeting notes, decide what to do first, and dig through long documents for the one useful point. The work is necessary, but it is slow, inconsistent under pressure, and easy to get wrong when owners and deadlines get lost.</p>
+    </div>
+    <div class="card">
+      <h3>Who it helps</h3>
+      <p class="muted" style="margin-bottom:.6em">Operations and admin staff, team leads, business analysts and anyone whose job runs on email, meetings and deadlines.</p>
+      <h3>The goal</h3>
+      <p class="muted" style="margin:0">Cut the time spent on routine writing and planning, <em>without</em> cutting the human judgement that keeps the output correct.</p>
+    </div>
+  </div>
+</section>
+
+<section id="solution" class="band">
+  <div class="wrap">
+    <p class="eyebrow">The solution</p>
+    <h2>Five tools, one assistant.</h2>
+    <p class="muted" style="max-width:62ch">The brief asks for at least three features. WorkMate delivers all five.</p>
+    <div class="grid g3" style="margin-top:24px">
+      <a class="card" href="app.html#email" style="text-decoration:none;color:inherit"><span class="icon" aria-hidden="true">✉️</span><h3>Smart Email Generator</h3><p class="muted">Choose audience (client, manager, team), tone (formal, informal, persuasive) and purpose. Get a ready-to-send draft with a clear call to action.</p></a>
+      <a class="card" href="app.html#meeting" style="text-decoration:none;color:inherit"><span class="icon" aria-hidden="true">📝</span><h3>Meeting Notes Summarizer</h3><p class="muted">Key points, decisions, an action table with owners and deadlines, open questions, and a warning when an action has no owner.</p></a>
+      <a class="card" href="app.html#planner" style="text-decoration:none;color:inherit"><span class="icon" aria-hidden="true">✅</span><h3>AI Task Planner</h3><p class="muted">Eisenhower prioritisation plus a time-blocked day or week that respects your hours, lunch and buffers, and says so when work will not fit.</p></a>
+      <a class="card" href="app.html#research" style="text-decoration:none;color:inherit"><span class="icon" aria-hidden="true">🔎</span><h3>AI Research Assistant</h3><p class="muted">Summaries, key insights, recommendations and a plain-language version of any text, or a research plan when you only have a topic.</p></a>
+      <a class="card" href="app.html#chat" style="text-decoration:none;color:inherit"><span class="icon" aria-hidden="true">💬</span><h3>Chatbot Interface</h3><p class="muted">A multi-turn assistant that remembers the conversation, asks one clarifying question when a request is vague, and declines unsafe requests.</p></a>
+      <a class="card" href="app.html#lab" style="text-decoration:none;color:inherit"><span class="icon" aria-hidden="true">🧪</span><h3>Prompt Lab</h3><p class="muted">Shows how every prompt evolved from a naive first try to the final version, and the technique behind each improvement.</p></a>
+    </div>
+
+    <h3 style="margin-top:48px">How it works</h3>
+    <div class="flow" role="list">
+      <div role="listitem"><b>1 · Input</b>Form or chat message from the user.</div>
+      <div role="listitem"><b>2 · Safety scan</b>Detects IDs, card numbers, phone numbers, passwords and warns first.</div>
+      <div role="listitem"><b>3 · Prompt builder</b>Assembles a Role-Context-Task-Format-Constraints prompt.</div>
+      <div role="listitem"><b>4 · Engine</b>Demo rules (no key) or a live LLM: Gemini, OpenAI or Claude.</div>
+      <div role="listitem"><b>5 · Review</b>Labelled output, validation checklist, copy or download.</div>
+    </div>
+  </div>
+</section>
+
+<section id="prompts">
+  <div class="wrap">
+    <p class="eyebrow">Prompt engineering</p>
+    <h2>Every prompt follows R-C-T-F-C.</h2>
+    <div class="grid g2">
+      <div>
+        <p><strong>Role</strong> sets expertise. <strong>Context</strong> supplies only the facts the model may use. <strong>Task</strong> states one job. <strong>Format</strong> fixes the structure so output is predictable. <strong>Constraints</strong> block known failure modes such as invented owners, dates or statistics.</p>
+        <p>Each prompt was refined over three versions. For example, the meeting summarizer’s first version produced a loose paragraph and guessed missing owners. The final version adds exact headings, a “write <em>Not stated</em>” rule, a worked example and a low temperature.</p>
+        <p><a class="btn ghost" href="app.html#lab">See all prompt versions →</a></p>
+        <p><span class="pill">Role prompting</span> <span class="pill">Few-shot example</span> <span class="pill">Delimiters</span> <span class="pill">Output schema</span> <span class="pill">Negative constraints</span> <span class="pill">Temperature tuning</span> <span class="pill">Self-check line</span></p>
+      </div>
+      <pre aria-label="Sample prompt">ROLE: You are a meticulous executive
+assistant who writes meeting minutes.
+
+CONTEXT: &lt;notes&gt; …raw notes… &lt;/notes&gt;
+
+TASK: Turn the notes into concise,
+accurate minutes.
+
+FORMAT: ## Summary · ## Key points ·
+## Decisions made · ## Action items
+(# | Action | Owner | Deadline)
+
+CONSTRAINTS:
+- Only list a decision if the notes say
+  it was agreed.
+- Never assign an owner or deadline that
+  is not in the notes: write "Not stated".
+- Do not add information.</pre>
+    </div>
+  </div>
+</section>
+
+<section id="responsible" class="band">
+  <div class="wrap">
+    <p class="eyebrow">Responsible AI</p>
+    <h2>Useful, but never blindly trusted.</h2>
+    <div class="grid g3" style="margin-top:20px">
+      <div class="card"><h3>Transparency</h3><p class="muted">Every output is labelled as AI-generated and shows whether the demo engine or a live model produced it. Live mode reveals the exact prompt used.</p></div>
+      <div class="card"><h3>Human in the loop</h3><p class="muted">Each result ends with a validation checklist (facts, owners, tone, confidentiality). The assistant drafts; the person decides.</p></div>
+      <div class="card"><h3>Privacy by design</h3><p class="muted">A scanner warns about IDs, card numbers, phone numbers and passwords before anything is sent. API keys stay in the browser tab only. There is no server and no stored data.</p></div>
+      <div class="card"><h3>Accuracy guardrails</h3><p class="muted">Prompts forbid invented facts and require “Not stated” or placeholders. Research output separates facts from inferences and adds a confidence note.</p></div>
+      <div class="card"><h3>Fairness</h3><p class="muted">Prompts require neutral, inclusive wording, and the interface reminds users that models can reflect bias in their training data.</p></div>
+      <div class="card"><h3>Honest limits</h3><p class="muted">The demo engine is rule-based, not an LLM, and says so. It cannot look things up or verify facts, and neither can a language model without sources: always check key claims.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="impact">
+  <div class="wrap grid g2" style="align-items:start">
+    <div>
+      <p class="eyebrow">Impact</p>
+      <h2>Where the time goes back.</h2>
+      <p>The figures below are <strong>planning assumptions</strong> for a typical task, not measured results. They drive the “minutes saved” counter in the app. Replace them with your own timings to see your real gain.</p>
+      <p class="muted">Method: time yourself doing the task manually, then with WorkMate including review, and compare.</p>
+    </div>
+    <div class="card">
+      <table>
+        <thead><tr><th>Task</th><th>Manual (est.)</th><th>With WorkMate (est.)</th><th>Saved</th></tr></thead>
+        <tbody>
+          <tr><td>Professional email</td><td>10 min</td><td>2 min</td><td>8 min</td></tr>
+          <tr><td>Meeting minutes</td><td>20 min</td><td>8 min</td><td>12 min</td></tr>
+          <tr><td>Daily plan</td><td>20 min</td><td>5 min</td><td>15 min</td></tr>
+          <tr><td>Article brief</td><td>25 min</td><td>10 min</td><td>15 min</td></tr>
+        </tbody>
+      </table>
+      <p class="muted" style="font-size:.85rem;margin:.8em 0 0">“With WorkMate” includes the time to review and correct the output.</p>
+    </div>
+  </div>
+</section>
+
+<section id="challenges" class="band">
+  <div class="wrap">
+    <p class="eyebrow">Challenges &amp; solutions</p>
+    <h2>What went wrong, and what I did about it.</h2>
+    <div class="tablewrap" style="background:var(--card);margin-top:20px"><table>
+      <thead><tr><th>Challenge</th><th>Solution</th></tr></thead>
+      <tbody>
+        <tr><td>AI summaries tend to guess missing owners and deadlines.</td><td>Added a “Not stated” rule to the prompt, and the demo engine flags unassigned actions with a visible warning.</td></tr>
+        <tr><td>Generic plans over-book the day.</td><td>The planner calculates available hours (with lunch and buffers), schedules by priority, and lists what could not fit.</td></tr>
+        <tr><td>Task wording such as “Team stand-up” has no priority signal.</td><td>Unmarked tasks default to important so nothing is silently dropped. Only explicit low-value wording demotes a task.</td></tr>
+        <tr><td>API keys cannot be hidden in a static site.</td><td>Bring-your-own-key, held only in session storage, plus a no-key demo mode. The README explains the server-side approach for production.</td></tr>
+        <tr><td>The app must work for anyone, even without an API key or internet.</td><td>Built a transparent rule-based engine and covered it with automated tests.</td></tr>
+      </tbody></table></div>
+
+    <h3 style="margin-top:40px">What’s next</h3>
+    <ul>
+      <li>Server-side proxy so a shared deployment can use a protected API key with rate limits.</li>
+      <li>Calendar and email integrations (draft straight into Outlook or Gmail).</li>
+      <li>Saved templates and a measured-time tracker to prove real productivity gains.</li>
+    </ul>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p><strong>Aphelele Khambule</strong> · CAPACITI AI Skill Accelerator Programme · Capstone project.</p>
+    <p><a href="app.html">Launch WorkMate</a> · <a href="https://github.com/YOUR-GITHUB-USERNAME/AI-Productivity-Assistant">Source code</a> · <a href="presentation/WorkMate-Presentation.pptx" download>Presentation</a></p>
+    <p class="muted" style="font-size:.82rem">AI output can be inaccurate or biased. Always review before use.</p>
+  </div>
+</footer>
+</body>
+</html>

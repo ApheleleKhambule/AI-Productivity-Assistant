@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>WorkMate – AI Workplace Productivity Assistant</title>
+<meta name="description" content="Draft emails, summarise meetings, plan your day and research faster with WorkMate, an AI-powered workplace productivity assistant.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to the assistant</a>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="index.html" aria-label="Back to portfolio"><span class="dot" aria-hidden="true">W</span>WorkMate</a>
+    <span class="chip" id="modeChip">Demo engine</span>
+    <span class="chip" id="savedChip" title="Rough estimate based on typical manual times – see Impact on the portfolio page">⏱ 0 min saved (est.)</span>
+    <nav class="nav" aria-label="Main">
+      <a href="index.html">Portfolio</a>
+      <button class="btn small ghost" id="openSettings" type="button">⚙ Settings</button>
+    </nav>
+  </div>
+</header>
+<div class="notice" role="note">
+  <div class="wrap"><strong>Responsible use:</strong> AI drafts can be wrong or biased. Review everything before you use it, and don’t paste passwords, ID numbers or confidential client data.</div>
+</div>
+
+<main id="main" class="wrap">
+  <div class="tabs" role="tablist" aria-label="Assistant tools">
+    <button class="tab" role="tab" id="t-email" aria-controls="p-email" aria-selected="true">✉️ Email</button>
+    <button class="tab" role="tab" id="t-meeting" aria-controls="p-meeting" aria-selected="false" tabindex="-1">📝 Meeting notes</button>
+    <button class="tab" role="tab" id="t-planner" aria-controls="p-planner" aria-selected="false" tabindex="-1">✅ Task planner</button>
+    <button class="tab" role="tab" id="t-research" aria-controls="p-research" aria-selected="false" tabindex="-1">🔎 Research</button>
+    <button class="tab" role="tab" id="t-chat" aria-controls="p-chat" aria-selected="false" tabindex="-1">💬 Chat</button>
+    <button class="tab" role="tab" id="t-lab" aria-controls="p-lab" aria-selected="false" tabindex="-1">🧪 Prompt Lab</button>
+  </div>
+
+  <!-- EMAIL -->
+  <div class="panel" id="p-email" role="tabpanel" aria-labelledby="t-email">
+    <div class="split">
+      <form class="card" data-feature="email" autocomplete="off">
+        <h2>Smart Email Generator</h2>
+        <p class="muted">Tell me who it’s for and what it needs to achieve.</p>
+        <div class="row">
+          <div><label for="e-recipient">Recipient name</label><input type="text" id="e-recipient" name="recipient" placeholder="e.g. Thabo"></div>
+          <div><label for="e-sender">Your name</label><input type="text" id="e-sender" name="sender" value="Aphelele Khambule"></div>
+        </div>
+        <div class="row">
+          <div><label for="e-audience">Audience</label><select id="e-audience" name="audience"><option value="client">Client</option><option value="manager">Manager</option><option value="team">Team</option></select></div>
+          <div><label for="e-tone">Tone</label><select id="e-tone" name="tone"><option value="formal">Formal</option><option value="informal">Informal</option><option value="persuasive">Persuasive</option></select></div>
+        </div>
+        <div class="row">
+          <div><label for="e-purpose">Purpose</label><select id="e-purpose" name="purpose"><option value="followup">Follow up</option><option value="request">Make a request</option><option value="update">Give an update</option><option value="meeting">Request a meeting</option><option value="apology">Apologise</option><option value="intro">Introduce</option><option value="thanks">Say thank you</option></select></div>
+          <div><label for="e-length">Length</label><select id="e-length" name="length"><option value="standard">Standard</option><option value="short">Short</option></select></div>
+        </div>
+        <label for="e-subject">Topic / subject</label><input type="text" id="e-subject" name="subject" placeholder="e.g. the Q3 service proposal" required>
+        <label for="e-details">Key points <span class="hint">(one per line)</span></label><textarea id="e-details" name="details" placeholder="Sent the proposal on Monday&#10;Pricing is valid until month-end"></textarea>
+        <label for="e-deadline">Reply-by date <span class="hint">(optional)</span></label><input type="text" id="e-deadline" name="deadline" placeholder="e.g. Friday 16 October">
+        <div class="actions"><button class="btn" type="submit">Generate email</button><button class="btn ghost" type="button" data-example="email">Load example</button></div>
+      </form>
+      <div class="card out" id="out-email" aria-live="polite"><div class="placeholder">Your email draft will appear here.</div></div>
+    </div>
+  </div>
+
+  <!-- MEETING -->
+  <div class="panel" id="p-meeting" role="tabpanel" aria-labelledby="t-meeting" hidden>
+    <div class="split">
+      <form class="card" data-feature="meeting">
+        <h2>Meeting Notes Summarizer</h2>
+        <p class="muted">Paste messy notes. I’ll pull out key points, decisions, action items, owners and deadlines.</p>
+        <label for="m-notes">Meeting notes</label>
+        <textarea id="m-notes" name="notes" style="min-height:280px" placeholder="Weekly Ops Meeting&#10;Attendees: Sipho, Lerato, Naledi&#10;..." required></textarea>
+        <div class="actions"><button class="btn" type="submit">Summarise notes</button><button class="btn ghost" type="button" data-example="meeting">Load example</button></div>
+      </form>
+      <div class="card out" id="out-meeting" aria-live="polite"><div class="placeholder">Your meeting summary will appear here.</div></div>
+    </div>
+  </div>
+
+  <!-- PLANNER -->
+  <div class="panel" id="p-planner" role="tabpanel" aria-labelledby="t-planner" hidden>
+    <div class="split">
+      <form class="card" data-feature="planner">
+        <h2>AI Task Planner</h2>
+        <p class="muted">One task per line. Add a duration (<code>2h</code>, <code>30m</code>) and words like <code>urgent</code> or <code>important</code> to guide priority.</p>
+        <label for="p-tasks">Tasks</label>
+        <textarea id="p-tasks" name="tasks" style="min-height:200px" placeholder="Prepare client report 2h urgent&#10;Team stand-up 15m&#10;Review budget 1h important" required></textarea>
+        <div class="row">
+          <div><label for="p-mode">Plan</label><select id="p-mode" name="mode"><option value="daily">Daily</option><option value="weekly">Weekly (Mon–Fri)</option></select></div>
+          <div><label for="p-start">Day starts</label><input type="time" id="p-start" name="start" value="08:00"></div>
+          <div><label for="p-end">Day ends</label><input type="time" id="p-end" name="end" value="16:30"></div>
+          <div><label for="p-break">Buffer (min)</label><input type="number" id="p-break" name="breakMins" value="10" min="0" max="60"></div>
+        </div>
+        <div class="checkrow"><input type="checkbox" id="p-lunch" name="lunch" checked><label for="p-lunch" style="margin:0;font-weight:500">Reserve lunch 12:30–13:00</label></div>
+        <div class="actions"><button class="btn" type="submit">Build my plan</button><button class="btn ghost" type="button" data-example="planner">Load example</button></div>
+      </form>
+      <div class="card out" id="out-planner" aria-live="polite"><div class="placeholder">Your prioritised plan will appear here.</div></div>
+    </div>
+  </div>
+
+  <!-- RESEARCH -->
+  <div class="panel" id="p-research" role="tabpanel" aria-labelledby="t-research" hidden>
+    <div class="split">
+      <form class="card" data-feature="research">
+        <h2>AI Research Assistant</h2>
+        <p class="muted">Paste an article or report to summarise, or just enter a topic to get a research plan.</p>
+        <label for="r-topic">Topic / question</label><input type="text" id="r-topic" name="topic" placeholder="e.g. Hybrid work and productivity">
+        <label for="r-text">Article or report text <span class="hint">(optional)</span></label>
+        <textarea id="r-text" name="text" style="min-height:220px" placeholder="Paste the text here…"></textarea>
+        <label for="r-level">Explain at</label><select id="r-level" name="level"><option value="plain">Plain language</option><option value="expert">Professional level</option></select>
+        <div class="actions"><button class="btn" type="submit">Research</button><button class="btn ghost" type="button" data-example="research">Load example</button></div>
+      </form>
+      <div class="card out" id="out-research" aria-live="polite"><div class="placeholder">Your research brief will appear here.</div></div>
+    </div>
+  </div>
+
+  <!-- CHAT -->
+  <div class="panel" id="p-chat" role="tabpanel" aria-labelledby="t-chat" hidden>
+    <div class="card chatbox">
+      <div class="msgs" id="msgs" aria-live="polite" aria-label="Conversation"></div>
+      <div class="suggest" id="suggest"></div>
+      <form class="chatform" id="chatform">
+        <label for="chatin" class="sr" style="position:absolute;left:-999px">Message</label>
+        <textarea id="chatin" placeholder="Ask WorkMate… (Enter to send, Shift+Enter for a new line)" rows="1"></textarea>
+        <button class="btn" type="submit" id="sendBtn">Send</button>
+        <button class="btn ghost" type="button" id="clearChat" title="Start a new conversation">New</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- PROMPT LAB -->
+  <div class="panel" id="p-lab" role="tabpanel" aria-labelledby="t-lab" hidden>
+    <h2>Prompt Lab</h2>
+    <p class="muted" style="max-width:70ch">Every prompt follows the <strong>R-C-T-F-C</strong> pattern: <strong>R</strong>ole · <strong>C</strong>ontext · <strong>T</strong>ask · <strong>F</strong>ormat · <strong>C</strong>onstraints. Below is how each one evolved from a naive first attempt (v1) to the version used in Live AI mode. In Live mode, the exact prompt sent is shown under each result.</p>
+    <div id="lab" class="grid"></div>
+    <h3 style="margin-top:2em">Shared system prompt</h3>
+    <pre id="sysprompt"></pre>
+  </div>
+</main>
+
+<dialog id="settings" aria-labelledby="sTitle">
+  <form method="dialog" id="settingsForm">
+    <h2 id="sTitle" style="font-size:1.4rem">Settings</h2>
+    <p class="muted" style="font-size:.9rem"><strong>Demo engine</strong> works instantly with no key, using transparent rules (not an LLM). <strong>Live AI</strong> sends your text to the provider you choose using your own API key.</p>
+    <label for="s-mode">Mode</label>
+    <select id="s-mode"><option value="demo">Demo engine (no key needed)</option><option value="live">Live AI (use my API key)</option></select>
+    <div id="liveFields">
+      <label for="s-provider">Provider</label><select id="s-provider"></select>
+      <label for="s-model">Model <span class="hint">(leave blank for default)</span></label><input type="text" id="s-model" autocomplete="off">
+      <label for="s-key">API key</label><input type="password" id="s-key" autocomplete="off" placeholder="Paste your key">
+      <p class="muted" style="font-size:.82rem;margin-top:6px">Get a key: <a id="keyLink" href="#" target="_blank" rel="noopener">provider console</a>. Your key is kept only in this browser tab (cleared when you close it) and sent only to the provider. Don’t use Live mode on a shared computer.</p>
+    </div>
+    <div class="actions"><button class="btn" value="save" id="saveSettings">Save</button><button class="btn ghost" value="cancel">Cancel</button></div>
+  </form>
+</dialog>
+
+<script src="js/engine.js"></script>
+<script src="js/prompts.js"></script>
+<script src="js/ai.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>
