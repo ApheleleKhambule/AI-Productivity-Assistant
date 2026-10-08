@@ -4,7 +4,7 @@
 
 WorkMate automates everyday workplace tasks with carefully engineered prompts and responsible-AI safeguards. It runs entirely in the browser: no build step, no server.
 
-**Live site:** `https://YOUR-GITHUB-USERNAME.github.io/AI-Productivity-Assistant/` (replace after deploying)
+**Live site:** ` https://aphelelekhambule.github.io/AI-Productivity-Assistant/` 
 **Assistant:** `/app.html` · **Slides:** `presentation/WorkMate-Presentation.pptx` · **Docs:** `docs/PROJECT_DOCUMENTATION.md`
 
 ## Features (brief requires 3; WorkMate has 5)
