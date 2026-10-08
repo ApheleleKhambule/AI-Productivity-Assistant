@@ -64,7 +64,7 @@ All prompts follow **Role · Context · Task · Format · Constraints**, with ex
 
 ## Deploy (GitHub Pages)
 
-Repo → **Settings → Pages → Build and deployment → Deploy from a branch → `main` / `(root)` → Save.** The site appears at `https://<username>.github.io/<repo>/` after about a minute.
+Repo → **Settings → Pages → Build and deployment → Deploy from a branch → `main` / `(root)` → Save.** The site appears at ` https://aphelelekhambule.github.io/AI-Productivity-Assistant/` after about a minute.
 
 ## Tools used
 
